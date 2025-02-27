@@ -23,7 +23,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   color: #fff;
-  scroll-padding: 8%;
+  scroll-padding: 20%;
 }
 
 /* Scrollbar Design */
@@ -232,6 +232,22 @@ nav ul li a:hover::after {
   nav {
     width: 60%;
   }
+}
+.container {
+  width: 100vw;
+  height: 100vw;
+  --s: 37px; /* control the size */
+  position: fixed;
+  opacity: 0.2;
+
+  --c: #0000, #282828 0.5deg 119.5deg, #0000 120deg;
+  --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+  --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+  --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+  background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+    var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+    var(--g3) 0 calc(1.73 * var(--s)) #1e1e1e;
+  background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
 }
 
 /* Home Banner */
@@ -972,7 +988,7 @@ section {
 }
 /* Footer */
 footer {
-  background: linear-gradient(90deg, #00723967, #00509283);
+  background: linear-gradient(90deg, #007239, #005092);
   color: var(--text-color);
   padding: 40px 20px 30px;
   font-family: "Poppins", sans-serif;
@@ -1008,6 +1024,7 @@ footer {
 
 .col h1 {
   color: var(--info-color);
+  text-shadow: #000 -1px 0 5px;
   font-size: 1.5rem;
   margin-bottom: 20px;
   text-transform: uppercase;

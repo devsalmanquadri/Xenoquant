@@ -15,6 +15,8 @@
 </head>
 
 <body>
+  <div class="container"></div>
+
   <!-- Header -->
   <header>
     <div class="header-container">
@@ -42,7 +44,6 @@
       </nav>
     </div>
   </header>
-
 
 
   <!-- Banner Section -->
@@ -348,6 +349,7 @@
       </div>
     </div>
   </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-main-row">
@@ -389,20 +391,20 @@
 
         <div class="col" id="col4">
           <h1>Pages</h1>
-          <a href="privacypolicy" class="btmlinks">
-            <h5>Privacy & Policy</h5>
+          <a href="#about-us" class="btmlinks">
+            <h5>Services</h5>
           </a>
-          <a href="termsandcondition" class="btmlinks">
-            <h5>Terms & Conditions</h5>
+          <a href="#contact-us" class="btmlinks">
+            <h5>Contact</h5>
           </a>
         </div>
       </div>
       <div class="col1">
         <div class="col" id="col5">
           <h1>Newsletter</h1>
-          <form class="footerform" action="" method="POST">
+          <form class="footerform" name="footerform" action="#" method="POST">
             <img src="image/mailicon.png" alt="Email Icon">
-            <input type="email" name="email" placeholder="Enter Your Email Address" autocomplete="off" required>
+            <input type="email" name="email" placeholder="Enter Your Email Address" autocomplete="on" required>
             <button type="submit" name="submit"><img src="image/newsletterarrow.png" alt="Submit"></button>
           </form>
         </div>
@@ -418,12 +420,22 @@
 
     const scriptURL =
       'https://script.google.com/macros/s/AKfycbxXKEOMaeMKw_6Rcp3w0Y65EsgrxXSsGdfUZsZYeK7g-Whnv5SmZ06p5fBI3GPLOAVAQg/exec';
-    const form = document.forms['contact-Form1'];
+    const form1 = document.forms['contact-Form1'];
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => alert('Thank you! your form is submitted successfully.'))
+    form1.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you! We Will Contact You Soon.');
+      fetch(scriptURL, { method: 'POST', body: new FormData(form1) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+    const form2 = document.forms['footerform'];
+
+    form2.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you! We Will Contact You Soon.');
+      fetch(scriptURL, { method: 'POST', body: new FormData(form2) })
+        .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
     })
 
