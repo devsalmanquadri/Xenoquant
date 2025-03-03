@@ -239,7 +239,7 @@ nav ul li a:hover::after {
   --s: 30px; /* control the size */
   position: fixed;
   opacity: 0.2;
-  --c: #0000, #282828 0.5deg 119.5deg, #0000 120deg;
+  --c: #0000, #282828 0.5deg 119.5deg, #00000011 120deg;
   --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
   --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
   --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
@@ -251,10 +251,10 @@ nav ul li a:hover::after {
 
 /* Home Banner */
 .home-banner {
-  padding: 10vw 10px;
+  padding: 3vw 1px;
   position: relative;
   overflow: hidden;
-  background-color: #14141e0a;
+  background-color: #070707;
 }
 .banner-container {
   display: flex;
@@ -319,6 +319,17 @@ nav ul li a:hover::after {
   border-radius: 20px;
   display: block;
 }
+.backgroundhome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(90deg, #007239, #005092); */
+  z-index: 1;
+  object-fit: cover;
+  opacity: 0.1;
+}
 /* Banner Background Animation */
 .home-banner::before {
   content: "";
@@ -379,6 +390,9 @@ section {
   text-align: center;
   margin-bottom: 60px;
 }
+#about-us {
+  background: #0a0a0a53;
+}
 .ourserviceheading,
 .ourclientsheading {
   font-size: 3rem;
@@ -399,7 +413,9 @@ section {
   flex-direction: column;
   padding: 80px 20px;
   background: radial-gradient(circle, #0d0e2013, #1b193013);
+  background: #0a0a0a53;
   overflow: hidden;
+  margin-bottom: 5vh;
 }
 
 #services .section-header h2 {
@@ -733,6 +749,8 @@ section {
   align-items: center;
   justify-content: center;
   background: #9393cf00;
+  background: #0a0a0a7e;
+
   color: var(--text-color);
   padding: 20px;
   overflow: hidden;
@@ -1254,13 +1272,22 @@ footer::before {
 }
 
 @media (max-width: 480px) {
+  .column h1 {
+    font-size: 2.2rem;
+  }
   .home-banner {
     padding-top: 30vw;
     flex-direction: column;
     text-align: center;
   }
   .col h1 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+  }
+  .ourserviceheading,
+  .ourclientsheading1,
+  .ourclientsheading,
+  .section-header h2 {
+    font-size: 2.5rem;
   }
 
   .col h5,
